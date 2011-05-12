@@ -1,0 +1,5 @@
+html { height: 100% }
+body { height: 100%; margin: 0px; padding: 0px; font:normal 11px/22px Arial, sans-serif; text-shadow: #ffffff 1px 1px, #ffffff 2px 2px}
+#map_canvas { height: 100%;width: 100%;}
+
+#console {position:absolute;bottom:0;left:0;}
