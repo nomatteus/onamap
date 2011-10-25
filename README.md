@@ -9,6 +9,10 @@ Two easy steps:
 1. `git clone git@github.com:nomatteus/onamap.git`
 2. Open index.html in your web browser!
 
+You should be able to run this directly in your browser (i.e.
+"double-click" on it!), but you'll probably want to run this through a
+web server once the _real coding_ starts.
+
 See the [Google Maps JavaScript API V3
 docs](http://code.google.com/apis/maps/documentation/javascript/) for
 examples, API documentation, and tutorials.
