@@ -27,26 +27,29 @@ function init() {
   }
   map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
 
-  // Plot markers on map
+  //var MarkerManager = {};
 
-  // Get data
-  $.ajax({
-    url: "json.php",
-    dataType: 'json', // Note: could use $.getJSON() as shortcut, but won't
-    data: {r: this.id},
-    cache: false, // Need to set this for IE especially, to cachebust
-    success: function(data, textStatus, jqXHR) {
-      _.each(data.vehicles, function(element, index, list){
-        // Check if vehicle exists in vehicle array already
-        //  If it exists, update its info
-        //  If doesn't exist, create it
-        if (element.id in that.vehicles) {
-          // Exists already, so update info
-          that.vehicles[element.id].update(element);
-        } else {
-          that.vehicles[element.id] = new Vehicle.Instance(element);
-        }
-      });
-    }
+  var markers = [];
+
+  // map click event
+  google.maps.event.addListener(map, 'click', function(ev){
+    //console.log(map);
+    //console.log(ev.latLng);
+    markers.push(new google.maps.Marker({
+      position: ev.latLng,
+      map: this,
+      draggable: true
+    }));
+    // Update output with marker list
+    $("#output").html(markerOutput(markers));
   });
+  
+  function markerOutput(markers) {
+    var output = "";
+    for (var i = 0; i < markers.length; i++) {
+      output += markers[i].getPosition().toString();
+    }
+    return output;
+  }
+
 }
