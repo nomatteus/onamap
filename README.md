@@ -7,7 +7,7 @@ Get Started
 Two easy steps:
 
 1. `git clone git@github.com:nomatteus/onamap.git`
-2. Open index.html in your web browser!
+2. Open `index.html` in your web browser!
 
 You should be able to run this directly in your browser (i.e.
 "double-click" on it!), but you'll probably want to run this through a
