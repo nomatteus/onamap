@@ -33,6 +33,13 @@ Start coding here!
 
 Loads the Google Maps JS, and HTML for the map/controls/etc.
 
+Depedencies
+-----------
+
+* Google Maps JS API v3
+* Underscore.js
+
+
 About
 -----
 

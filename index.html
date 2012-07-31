@@ -34,13 +34,28 @@
 </head> 
 <body> 
   <div id="map_canvas"></div> 
+  <div id="sv_canvas"></div> 
 
 	<div id="controls">
+    <div class="info">
+      <div id="map-position">
+        <strong>Map Position</strong><br>
+        Lat: <input type="text" name="lat"><br>
+        Lng: <input type="text" name="lng"><br>
+      </div>
+      <div id="streetview-position">
+        <strong>StreetView POV</strong><br>
+        Heading: <input type="text" name="heading"><br>
+        Pitch: <input type="text" name="pitch"><br>
+        Zoom: <input type="text" name="zoom">
+      </div>
+    </div>
+    Markers<br>
 		<textarea id="output"></textarea>
 		<a href="#" id="show-hide-output" data-element="textarea#output">Show/Hide Output</a>
 	</div>
 
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
   <script>window.jQuery || document.write('<script src="js/libs/jquery.min.js">\x3C/script>')</script>
 	
 	<script type="text/javascript">
@@ -52,6 +67,9 @@
 	});
 	</script>
 
+ <script type="text/javascript" src="js/libs/underscore.js"></script> 
+ <script type="text/javascript" src="js/Ride.js"></script> 
+ <script type="text/javascript" src="js/MapApp.js"></script> 
  <script type="text/javascript" src="js/app.js"></script> 
 
   <script>

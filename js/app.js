@@ -1,9 +1,43 @@
-var geocoder, 
+
+
+function init() {
+  var opts = {
+    on_pov_change: function(sv) {
+      var sv_pov = sv.getPov();
+      $("#streetview-position input[name=heading]").val(sv_pov.heading);
+      $("#streetview-position input[name=pitch]").val(sv_pov.pitch);
+      $("#streetview-position input[name=zoom]").val(sv_pov.zoom);
+    },
+    on_pos_change: function(map) {
+      console.log(map.getPosition().lat());
+      $("#map-position input[name=lat]").val(map.getPosition().lat());
+      $("#map-position input[name=lng]").val(map.getPosition().lng());
+    },
+    on_map_click: function(markers) {
+      // Update output with marker list
+      $("#output").html(function(){
+        var output = "";
+        for (var i = 0; i < markers.length; i++) {
+          output += markers[i].getPosition().toString();
+        }
+        console.log(output);
+        return output;
+      });
+    }
+  },
+  app = new MapApp(opts);
+  app.init();
+
+
+}
+
+
+var geocoder,
   map,
   myLatlng;
 
 
-function init() {
+function init_old() {
   // Centre map based on a geocoded location
   geocoder = new google.maps.Geocoder();
   geocoder.geocode({address: 'm5v1e3'}, function (results, status) {
